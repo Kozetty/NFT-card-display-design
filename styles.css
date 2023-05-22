@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+:root {
+    --guide-border: 1px solid hsl(0, 0%, 100%);
+    --center-align: center;
+    --responsive-width: 100%;
+    --header-border-radius: 10px;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(217, 54%, 11%);
+}
+p {
+    font-size: 1.8rem;
+}
+.inline-flex--row {
+    display: inline-flex;
+}
+/* Base Styles end here */
+
+
+
+/* Main NFT card container */
+.card {
+    max-width: 375px;
+    padding: 2.5rem;
+    background-color: hsl(216, 50%, 16%);
+    border-radius: 15px;
+}
+
+/* Card header section */
+.card__header {
+    width: 100%;
+    position: relative;
+    border-radius: var(--header-border-radius);
+}
+.header__image {
+    width: 100%;
+    border-radius: var(--header-border-radius);
+}
+
+/* View icon */
+.view-icon-container {
+    width: 100%;
+    height: 99%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    border-radius: var(--header-border-radius);
+    transition: background-color 0.2s;
+}
+.card__header:hover .view-icon-container {
+    background-color: hsla(178, 100%, 65%, 0.5);
+    z-index: 1;
+}
+
+/* Card description section */
+.card-description-container {
+    width: 100%;
+    margin-top: 2.5rem;
+}
+.NFT-title {
+    padding-bottom: 1.5rem;
+    font-size: 2.3rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: hsl(0, 0%, 100%);
+    transition: color 0.3s ease;
+}
+.NFT-title:hover {
+    color: hsl(178, 100%, 50%);
+}
+.NFT-description {
+    padding-bottom: 0.7rem;
+    line-height: 1.5;
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: hsl(215, 51%, 70%);
+}
+
+/* NFT price and age section */
+.NFT-price-container {
+    padding: 1rem 0 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid hsl(215, 32%, 30%);
+}
+.NFT-price {
+    align-items:var(--center-align);
+    gap: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: hsl(178, 100%, 50%);
+}
+.NFT-duration {
+    align-items:var(--center-align);
+    gap: 0.5rem;
+    font-size: 1.6rem;
+    color: hsl(215, 51%, 70%);
+}
+
+/* Creator profile section */
+.NFT-creator {
+    font-size: 1.6rem;
+    align-items:var(--center-align);
+    gap: 1.5rem;
+}
+.profile-pic {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1.5px solid hsl(0, 0%, 100%);
+}
+.creator-info {
+    color: hsl(215, 51%, 70%);
+}
+#creator-tag {
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+#creator-tag:hover {
+    transition: color 0.3s ease;
+    color: hsl(178, 100%, 50%);
+}
+
+/* Desktop Responsiveness */
+@media screen and (min-width: 500px) {
+    .card {
+        max-width: 300px;
+    }
+
+    /* NFT description section */
+    .NFT-title {
+        font-size: 2rem;
+    }
+    .NFT-description {
+        font-size: 1.5rem;
+    }
+    .NFT-price {
+        font-size: 1.4rem;
+    }
+    .NFT-duration {
+        font-size: 1.4rem;
+    }
+
+    /* Creator info section */
+    .NFT-creator {
+        font-size: 1.4rem;
+    }
+    .profile-pic {
+        width: 30px;
+        height: 30px;
+    }
+    .creator-info p {
+        font-size: 1.5rem;
+    }
+}
